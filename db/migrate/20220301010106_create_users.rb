@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :password_digest
       t.integer :age
-      t.integer :weight
+      t.string :weight
       t.string :health
       t.string :diet_type
       t.string :restrictions
