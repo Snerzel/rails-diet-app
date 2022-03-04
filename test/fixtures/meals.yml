@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  nutrition_level: 1
+  diet_type: MyString
+  ingredients: MyString
+
+two:
+  name: MyString
+  nutrition_level: 1
+  diet_type: MyString
+  ingredients: MyString

@@ -11,6 +11,11 @@
   </head>
 
   <body>
+    <% if session[:current_user_id] %>
+    <h4>
+    Hello <%= session[:current_user_id] %>
+    </h4>
+    <% end %>
     <%= yield %>
   </body>
 </html>
