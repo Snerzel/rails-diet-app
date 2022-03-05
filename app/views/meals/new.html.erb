@@ -1,0 +1,21 @@
+<h1> Add a new meal! </h1>
+
+<%= form_tag('/meals') do %>
+    <p>
+        <%= label_tag "Name of the meal:" %>
+        <%= text_field_tag "name" %>
+        </p>
+        <p>
+        <%= label_tag "For 1 to 10 how healthy would you say your meal is:" %>
+        <%= text_field_tag "nutrition_level" %>
+        </p>
+        <p>
+        <%= label_tag "What diet type does the meal match:" %>
+        <%= select_tag :diet_type, options_for_select(['Omnivorous', 'Vegetarian', 'Vegan', 'Gluten Free', 'Keto', 'Paleo', 'Carnivorous'])%>
+        </p>
+        <p>
+        <%= label_tag "What are the ingredients of the meal:" %>
+        <%= text_field_tag ":ingredients" %>
+        </p>
+        <%= submit_tag "Submit!" %>
+        <% end %>

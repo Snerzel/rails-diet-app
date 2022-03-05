@@ -6,4 +6,12 @@ Rails.application.routes.draw do
   get '/user-login', to: 'sessions#new_user'
   post '/sessions', to: 'sessions#create'
   root 'application#home'
+
+  get '/pro-signup', to: 'pros#new'
+  post '/pros', to: 'pros#create'
+  get '/pro-login', to: 'sessions#new_pro'
+
+  get '/add-new-meal', to: 'meals#new'
+  post '/meals', to: 'meals#create'
+
 end

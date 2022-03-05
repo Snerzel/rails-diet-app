@@ -3,7 +3,7 @@ class CreatePros < ActiveRecord::Migration[6.1]
     create_table :pros do |t|
       t.string :name
       t.string :email
-      t.password_digest :password
+      t.string :password_digest
 
       t.timestamps
     end
