@@ -1,5 +1,17 @@
-<% if session[:current_user_id] %>
-    <h4>
-    Hello <%= session[:current_user_id] %>
-    </h4>
-    <% end %>
+<%= Time.now %>
+<h1>Welcome to the last diet app you will ever need!!</h1>
+
+<h3> Looking to learn how to improve your eating habits? Join us and sign in as a Client! </h3>
+<p>
+  <%= link_to "Returning client? Login here!", '/user-login' %>
+  or
+  <%= link_to "Signup as a client!", '/user-signup' %>
+  </p>
+<h3> Are you a Professional Dietitian or Nutritionist? Join us and sign in as a Professional! </h3>
+  
+<p>
+
+  <%= link_to "Returning Professional? Login here!", '/pro-login' %>
+  or
+  <%= link_to "Signup as a Professional!", '/pro-signup' %>
+  </p>

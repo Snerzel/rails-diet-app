@@ -1,7 +1,7 @@
 class User < ApplicationRecord
     belongs_to :pro 
     has_many :meals
-    has_many :allergens through: :meals
+    has_many :allergens, through: :meals
     
     has_secure_password
 

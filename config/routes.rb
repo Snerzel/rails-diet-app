@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
   get '/user-login', to: 'sessions#new_user'
   post '/sessions', to: 'sessions#create'
+  get '/userhome', to: 'users#show'
   root 'application#home'
 
   get '/pro-signup', to: 'pros#new'
@@ -16,4 +17,6 @@ Rails.application.routes.draw do
 
   get '/logout', to: 'sessions#destroy'
 
+
+  get '/auth/google/callback', to: 'sessions#create'
 end
