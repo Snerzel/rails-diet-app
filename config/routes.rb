@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   get '/add-new-meal', to: 'meals#new'
   post '/meals', to: 'meals#create'
+  get '/meals', to: 'meals#index'
 
   get '/logout', to: 'sessions#destroy'
 

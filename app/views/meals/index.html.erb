@@ -1,0 +1,8 @@
+<%= Time.now %>
+<h1> All meals </h1>
+
+<ol>
+<% @meals.each do |m| %>
+    <li><%= m.name %></li>
+<% end %>
+</ol>
