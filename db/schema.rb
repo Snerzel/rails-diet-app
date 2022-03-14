@@ -14,8 +14,10 @@ ActiveRecord::Schema.define(version: 2022_03_07_233509) do
 
   create_table "allergen", force: :cascade do |t|
     t.string "ingredients"
+    t.integer "meals_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["meals_id"], name: "index_allergen_on_meals_id"
   end
 
   create_table "meals", force: :cascade do |t|

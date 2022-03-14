@@ -5,7 +5,7 @@ class CreateMeals < ActiveRecord::Migration[6.1]
       t.integer :nutrition_level
       t.string :diet_type
       t.string :ingredients
-
+      t.references :users
       t.timestamps
     end
   end

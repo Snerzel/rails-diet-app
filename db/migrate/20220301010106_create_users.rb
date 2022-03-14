@@ -9,6 +9,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :health
       t.string :diet_type
       t.string :restrictions
+      t.references :pro
 
       t.timestamps
     end
