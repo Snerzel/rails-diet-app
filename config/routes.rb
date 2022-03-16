@@ -20,4 +20,7 @@ Rails.application.routes.draw do
 
 
   get '/auth/google/callback', to: 'sessions#create'
+
+ resources :users, only: [:show]
+
 end

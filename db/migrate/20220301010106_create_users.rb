@@ -6,10 +6,11 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :password_digest
       t.integer :age
       t.string :weight
+      t.string :gender
       t.string :health
       t.string :diet_type
       t.string :restrictions
-      t.references :pro
+      t.belongs_to :pro, foreign_key: true
 
       t.timestamps
     end

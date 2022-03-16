@@ -8,7 +8,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
      if @user.save
          session[:user_id] = @user.id
-         redirect_to user_path(@user)
+         redirect_to users_path(@user)
         else
         render :new
         end
@@ -20,6 +20,7 @@ class UsersController < ApplicationController
         if !@user
             redirect_to '/' 
         end
+        redirect_to '/userhome'
     end
     
       private

@@ -4,7 +4,7 @@ class ProsController < ApplicationController
         @pro = Pro.new(pro_params)
      if @pro.save
          session[:pro_id] = @pro.id
-         redirect_to pro_path(@pro)
+         redirect_to pros_path(@pro)
         else
         render :new
         end

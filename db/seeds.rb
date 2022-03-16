@@ -8,7 +8,7 @@
 
 pro = Pro.create(name: 'test', email: 'somethingelse',password: 'test')
 
-user = User.create(email: 'something',name: 'none',password: 'test',age: 23,weight: 'lb', health: 'fine', diet_type: 'something', restrictions: 'oil', pro: pro)
+user = User.create(email: 'something', name: 'none', password: 'test',age: 23, weight: 'lb', gender: 'male', health: 'fine', diet_type: 'something', restrictions: 'oil', pro: pro)
 
 3.times do
     name = ['tomato', 'peas', 'chicken'].sample

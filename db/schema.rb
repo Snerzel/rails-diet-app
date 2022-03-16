@@ -14,10 +14,10 @@ ActiveRecord::Schema.define(version: 2022_03_07_233509) do
 
   create_table "allergen", force: :cascade do |t|
     t.string "ingredients"
-    t.integer "meals_id"
+    t.integer "meal_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["meals_id"], name: "index_allergen_on_meals_id"
+    t.index ["meal_id"], name: "index_allergen_on_meal_id"
   end
 
   create_table "meals", force: :cascade do |t|
@@ -25,8 +25,10 @@ ActiveRecord::Schema.define(version: 2022_03_07_233509) do
     t.integer "nutrition_level"
     t.string "diet_type"
     t.string "ingredients"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_meals_on_user_id"
   end
 
   create_table "pros", force: :cascade do |t|
@@ -42,12 +44,18 @@ ActiveRecord::Schema.define(version: 2022_03_07_233509) do
     t.string "name"
     t.string "password_digest"
     t.integer "age"
-    t.integer "weight"
+    t.string "weight"
+    t.string "gender"
     t.string "health"
     t.string "diet_type"
     t.string "restrictions"
+    t.integer "pro_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["pro_id"], name: "index_users_on_pro_id"
   end
 
+  add_foreign_key "allergen", "meals"
+  add_foreign_key "meals", "users"
+  add_foreign_key "users", "pros"
 end
