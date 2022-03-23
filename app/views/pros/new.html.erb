@@ -1,17 +1,17 @@
 <h1> Sign up as new pro! </h1>
 
-<%= form_tag("/pros") do %>
+<%= form_for(@pro) do |f| %>
     <p>
-    <%= label_tag "Name:" %>
-    <%= text_field_tag "name" %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
     </p>
     <p>
-    <%= label_tag "Email:" %>
-    <%= text_field_tag "email" %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
     </p>
     <p>
-    <%= label_tag "Password:" %>
-    <%= password_field_tag "password_digest" %>
+    <%= f.label :password %>
+    <%= f.password_field :password_digest %>
     </p>
-    <%= submit_tag "Sign up!" %>
+    <%= f.submit "Sign up!" %>
     <% end %>

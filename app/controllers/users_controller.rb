@@ -4,11 +4,16 @@ class UsersController < ApplicationController
         @user = User.new
     end
 
+    def index
+        @users = User.all
+    end
+
     def create
+       user_params[:pro] = Pro.find_by_id(params[:pro])
         @user = User.new(user_params)
-     if @user.save
+     if @user.save!
          session[:user_id] = @user.id
-         redirect_to users_path(@user)
+         redirect_to "/users/#{current_user.id}"
         else
         render :new
         end
@@ -20,12 +25,11 @@ class UsersController < ApplicationController
         if !@user
             redirect_to '/' 
         end
-        redirect_to '/userhome'
     end
     
       private
     
       def user_params
-        params.permit(:name, :email, :password_digest, :age, :weight, :gender, :health, :diet_type, :restrictions)
+        params.require(:user).permit(:name, :email, :password_digest, :age, :weight, :gender, :health, :diet_type, :restrictions)
       end
 end

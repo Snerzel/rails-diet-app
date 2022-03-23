@@ -1,1 +1,29 @@
 <h1>Welcome to <%= @user.name%>'s homepage! </h1>
+
+<p>
+    Age:
+    <%= @user.age %>
+    </p>
+    <p>
+    Weight:
+    <%= @user.weight %>
+    </p>
+    <p>
+    Health:
+    <%= @user.health %>
+    </p>
+    <p>
+    Gender:
+    <%= @user.gender %>
+    </p>
+    <p>
+    Diet Type:
+    <%= @user.diet_type %>
+    </p>
+    <p>
+    Diet Restrictions:
+    <%= @user.restrictions %>
+    </p>
+
+    <%= link_to "See all meals", '/meals' %>
+    <%= link_to "Add a meal", '/add-new-meal' %>

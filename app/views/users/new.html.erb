@@ -1,45 +1,49 @@
 <h1> Sign up as new user! </h1>
 
-<%= form_tag("/users") do %>
+<%= form_for(@user) do |f| %>
     <p>
-    <%= label_tag "Name:" %>
-    <%= text_field_tag "name" %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
     </p>
     <p>
-    <%= label_tag "Email:" %>
-    <%= text_field_tag "email" %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
     </p>
     <p>
-    <%= label_tag "Password:" %>
-    <%= password_field_tag "password_digest" %>
+    <%= f.label :password %>
+    <%= f.password_field :password_digest %>
     </p>
     <p>
-    <%= label_tag "Age:" %>
-    <%= text_field_tag "age" %>
+    <%= f.label :age %>
+    <%= f.text_field :age %>
     </p>
     <p>
-    <%= label_tag "Weight:" %>
+    <%= f.label :weight %>
     <%= select_tag :weight, options_for_select(['Extremely Underweight', 'Underweight', 'Low Ideal', 'Ideal', 'High Ideal', 'Overweight', 'Obese'])%>
     </p>
     <p>
-    <%= label_tag "Gender:" %>
-    <%= select_tag :gender, options_for_select(['Bio Female', 'Bio Male', 'Other', 'Trans Man', 'Trans Woman']) %>
+    <%= f.label :gender %>
+    <%= f.select :gender, options_for_select(['Bio Female', 'Bio Male', 'Other', 'Trans Man', 'Trans Woman']) %>
     </p>
     <p>
-    <%= label_tag "Health:" %>
-    <%= select_tag :health, options_for_select(['Great', 'Very Good', 'Okay', 'Not Great', 'Poor'])%>
+    <%= f.label :health %>
+    <%= f.select :health, options_for_select(['Great', 'Very Good', 'Okay', 'Not Great', 'Poor'])%>
     </p>
     <p>
-    <%= label_tag "Diet Type:" %>
-    <%= select_tag :diet_type, options_for_select(['Omnivorous', 'Vegetarian', 'Vegan', 'Gluten Free', 'Keto', 'Paleo', 'Carnivorous'])%>
+    <%= f.label :diet_type %>
+    <%= f.select :diet_type, options_for_select(['Omnivorous', 'Vegetarian', 'Vegan', 'Gluten Free', 'Keto', 'Paleo', 'Carnivorous'])%>
     </p>
     <p>
-    <%= label_tag "Diet restrictions:" %>
-    <%= text_field_tag "restrictions" %>
+    <%= f.label :restrictions %>
+    <%= f.text_field :restrictions %>
     </p>
     <p>
-    <%= submit_tag "Sign up!" %>
+    <%= f.label :pros %>
+    <%= f.select :pro, Pro.all.map  { |p| [p.name, p.id]}, {}   %>
+    </p>
+    <p>
+    <%= f.submit "Sign up!" %>
+    
+    </p>
     <% end %>
-    </p>
-
 <%= Time.now %>

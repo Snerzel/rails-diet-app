@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    belongs_to :pro 
+    belongs_to :pro, optional: true
     has_many :meals
     has_many :allergens, through: :meals
     

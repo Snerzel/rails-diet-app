@@ -11,11 +11,18 @@
   </head>
 
   <body>
+  
     <% if session[:current_user_id] %>
     <h4>
     Hello <%= session[:current_user_id] %>
     </h4>
     <% end %>
     <%= yield %>
+    <div class="nav">
+    <% if logged_in? %>
+      <a href="/logout">Logout</a>
+      
+      <% end %>
+      </div>
   </body>
 </html>

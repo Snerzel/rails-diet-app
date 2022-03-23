@@ -1,0 +1,10 @@
+<h1>Welcome to <%= @pro.name%>'s homepage! </h1>
+
+<h2> All users </h2>
+<ol>
+<% User.all.each do |u| %>
+    <li><%= u.name %></li>
+<% end %>
+</ol>
+
+<%= link_to "See all meals", '/meals' %>
