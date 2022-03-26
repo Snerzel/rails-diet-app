@@ -3,6 +3,7 @@
 
 <ol>
 <% @meals.each do |m| %>
-    <li><%= m.name %></li>
+    <li><%= link_to "#{m.name} ", meal_path(m) %></li>
+    
 <% end %>
 </ol>

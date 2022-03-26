@@ -4,15 +4,19 @@ Rails.application.routes.draw do
   get '/user-signup', to: 'users#new'
   post '/users', to: 'users#create'
   get '/user-login', to: 'sessions#new_user'
+  post '/user-login', to: 'sessions#create'
   post '/sessions', to: 'sessions#create'
   get '/userhome', to: 'users#show'
   root 'application#home'
 
   get '/pro-signup', to: 'pros#new'
+  post '/pro-signup', to: 'sessions#create'
   post '/pros', to: 'pros#create'
   get '/pro-login', to: 'sessions#new_pro'
+  post '/pro-login', to: 'sessions#create'
 
   get '/add-new-meal', to: 'meals#new'
+  post '/add-new-meal', to: 'meals#create'
   post '/meals', to: 'meals#create'
   get '/meals', to: 'meals#index'
 
@@ -23,4 +27,5 @@ Rails.application.routes.draw do
 
  resources :users, only: [:show]
  resources :pros, only: [:show]
+ resources :meals, only: [:show]
 end

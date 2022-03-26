@@ -8,14 +8,22 @@ class MealsController < ApplicationController
         @meals = Meal.all
     end
 
-    def create
-        @meal = Meal.new
-        @meal.name = params[:name]
-        @meal.nutrition_level = params[:nutrition_level]
-        @meal.diet_type = params[:diet_type]
-        @meal.ingredients = params[:ingredients]
-        @meal.save
-
-        redirect_to '/meals'
+    def show
+        @meal = Meal.find_by(params[:id])
     end
+
+    def create
+        @meal = Meal.new(meal_params)
+        @meal.user.name = current_user.id
+        if @meal.save!
+            redirect_to meals_path(@meal)
+        else
+            render :new
+        end
+    end
+    private
+    
+      def meal_params
+        params.permit(:name, :nutrition_level, :diet_type, :ingredients)
+      end
 end
