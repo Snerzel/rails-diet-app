@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/user-login', to: 'sessions#new_user'
   post '/user-login', to: 'sessions#create'
   post '/sessions', to: 'sessions#create'
+  post '/user-signup', to: 'sessions#create'
   get '/userhome', to: 'users#show'
   root 'application#home'
 
@@ -19,13 +20,14 @@ Rails.application.routes.draw do
   post '/add-new-meal', to: 'meals#create'
   post '/meals', to: 'meals#create'
   get '/meals', to: 'meals#index'
+  post '/meals/:id/edit', to: 'meals#update'
 
   get '/logout', to: 'sessions#destroy'
 
 
   get '/auth/google/callback', to: 'sessions#create'
 
- resources :users, only: [:show]
+ resources :users, only: [:index, :show, :new, :create, :edit, :update]
  resources :pros, only: [:show]
- resources :meals, only: [:show]
+ resources :meals, only: [:index, :show, :new, :create, :edit, :update]
 end

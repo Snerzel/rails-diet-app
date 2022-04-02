@@ -19,8 +19,10 @@ class ProsController < ApplicationController
         redirect_if_not_logged_in
         @pro = Pro.find_by_id(params[:id])
         if !@pro
-            redirect_to '/' 
+            redirect_to '/'
+        
         end
+
     end
     
       private

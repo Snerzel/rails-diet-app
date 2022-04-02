@@ -24,6 +24,15 @@
     Diet Restrictions:
     <%= @user.restrictions %>
     </p>
+    <p>
+    Allergies:
+    <%= @user.allergens %>
+    </p>
+
+
+    
+    <%= link_to "Edit #{@user.name}", '/users/:id/edit'%>
+    
 
     <%= link_to "See all meals", '/meals' %>
     <%= link_to "Add a meal", '/add-new-meal' %>

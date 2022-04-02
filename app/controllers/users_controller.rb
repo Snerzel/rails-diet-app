@@ -4,6 +4,17 @@ class UsersController < ApplicationController
         @user = User.new
     end
 
+    def edit
+    end
+
+    def update
+        if @user.update(user_params)
+          redirect_to @user
+        else
+          render 'edit'
+        end
+      end
+
     def index
         @users = User.all
     end
@@ -24,6 +35,7 @@ class UsersController < ApplicationController
         @user = User.find_by_id(params[:id])
         if !@user
             redirect_to '/' 
+        
         end
     end
     

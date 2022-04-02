@@ -13,7 +13,7 @@ class MealsController < ApplicationController
     end
 
     def edit
-        
+        # @meal = Meal.find(params[:id])
     end
 
     def update
@@ -31,6 +31,7 @@ class MealsController < ApplicationController
 
     def create
         @meal = Meal.new(meal_params)
+        @meal.user_id = session[:user_id]
        # @meal.user.name = current_user.id
         if @meal.save!
             redirect_to meals_path(@meal)

@@ -5,4 +5,21 @@
 
 <h4> This meal was submitted by <%= link_to "#{@meal.user.name}", user_path %></h4>
 
-<%= link_to "Edit #{@meal.name}", edit_meal_path(@meal) %>
+<%= link_to "Edit #{@meal.name}", '/meals/:id/edit'%>
+
+
+
+<% Note.all.each do |n| %>
+    <li><%= n.note %></li>
+<% end %>
+
+
+<%= form_for('/notes') do |f| %>
+
+<div>
+<%= f.label :note %>
+<%= f.text_field :note %>
+</div>
+
+<%= f.submit "Post note" %>
+<% end %>
