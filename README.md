@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This diet App uses a whole new approach to improving your eating habits for good. Rather than have to completely change a cut out all the foods you know and love this app allows you to tweek what you eat under the guidence of a diet expert. Whether you wish to gain weight, lose weight, maintain weight, or you just want to live healthier, This new diet app will help you get there!
 
-Things you may want to cover:
+In this app you can sign up as a user/client if you are looking for food advise or you can sign up as a pro/dietitian where you can you your expert advise to guide clients to their goals.
 
-* Ruby version
+Both Pros and user can also log out.
 
-* System dependencies
+A user can also sign in with google!
 
-* Configuration
+Users can add meals that they enjoy and pros can leave notes as to what the user should change about the meal to make it more suitable to their lifestyle goals.
 
-* Database creation
+Both the user and pro can edit meals if some of the information is wrong.
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Stretch goals:
+Ability to search meals.
+Only be shown meals that are appropriate for the user's diet.
+Users and pros can see list of just new meals
+Users get notifide when a pro posts a note on their meal.
+Make everything prettier.

@@ -3,7 +3,7 @@
 <h2> All users </h2>
 <ol>
 <% User.all.each do |u| %>
-    <li><%= u.name %></li>
+    <li><%= link_to "#{u.name} ", user_path(u) %></li>
 <% end %>
 </ol>
 

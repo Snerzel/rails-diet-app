@@ -17,5 +17,9 @@
   </p>
 
   <p>
-    
+  <% if session[:current_user_id] %>
+  <h4>
+   <%= "Hello #{current_user}!" %>
+  </h4>
+  <% end %>
    </p>

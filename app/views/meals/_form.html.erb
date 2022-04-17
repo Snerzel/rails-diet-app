@@ -1,4 +1,4 @@
-<%= form_for('/meals') do |f| %>
+<%= form_for Meal.new do |f| %>
     <p>
     "Name of the meal:"
         <%= f.label :name  %>
@@ -21,7 +21,7 @@
         </p>
         <p>
         <%= f.label "Add allergies" %>
-        <%= f.text_field :allergen %>
+        <%= f.text_field :allergens %>
         </p>
         <%= f.submit "Submit!" %>
         <% end %>

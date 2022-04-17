@@ -14,12 +14,13 @@
   
     <% if session[:current_user_id] %>
     <h4>
-    Hello <%= session[:current_user_id] %>
+     <%= "Hello #{current_user}!" %>
     </h4>
     <% end %>
     <%= yield %>
     <div class="nav">
     <% if logged_in? %>
+    <li><%= link_to "Profile", "/users/:id" %></li>
       <a href="/logout">Logout</a>
       
       <% end %>

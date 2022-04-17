@@ -2,7 +2,7 @@
 <h1> All meals </h1>
 
 <ol>
-<% @meals.each do |m| %>
+<% Meal.all.each do |m| %>
     <li><%= link_to "#{m.name} ", meal_path(m) %></li>
     
 <% end %>
