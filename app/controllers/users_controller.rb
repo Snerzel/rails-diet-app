@@ -41,6 +41,6 @@ class UsersController < ApplicationController
       private
     
       def user_params
-        params.require(:user).permit(:name, :email, :password_digest, :age, :weight, :gender, :health, :diet_type, :restrictions, allergens_attributes: [:id, :ingredients])
+        params.require(:user).permit(:name, :email, :password_digest, :age, :weight, :gender, :health, :diet_type, :restrictions)
       end
 end

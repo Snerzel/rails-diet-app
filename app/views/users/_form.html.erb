@@ -35,10 +35,7 @@
     <%= f.label :restrictions %>
     <%= f.text_field :restrictions %>
     </p>
-    <p>
-    <%= f.label :allergens %>
-    <%= f.text_field :allergens %>
-    </p>
+    
     <p>
     <%= f.label :pros %>
     <%= f.select :pro, Pro.all.map  { |p| [p.name, p.id]}, {}   %>

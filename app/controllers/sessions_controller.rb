@@ -24,16 +24,16 @@ class SessionsController < ApplicationController
                 session[:email] = params[:email]
                 redirect_to user_path(@user)
         end
-        # if @user && @user.authenticate(password: params[:email][:password])
-        #     session[:user_id] = @user.id
-        #     redirect_to user_path(@user)
-        # elsif  @pro && @pro.authenticate(password: params[:email][:password])
-        #         session[:pro_id] = @pro.id
-        #         redirect_to pro_path(@pro)
-        # else
-        #     flash[:error] = "Incorrect credentials. Please try again."
-        #     redirect_to root_path
-        #   end
+        if @user && @user.authenticate(password: params[:email][:password])
+            session[:user_id] = @user.id
+            redirect_to user_path(@user)
+        elsif  @pro && @pro.authenticate(password: params[:email][:password])
+                session[:pro_id] = @pro.id
+                redirect_to pro_path(@pro)
+        else
+            flash[:error] = "Incorrect credentials. Please try again."
+            redirect_to root_path
+          end
     end
 
     def omniauth

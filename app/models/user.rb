@@ -1,8 +1,8 @@
 class User < ApplicationRecord
     belongs_to :pro, optional: true
     has_many :meals
-    has_many :allergens, through: :meals
-    accepts_nested_attributes_for :allergens
+    has_many :notes, through: :meals
+    
     
     has_secure_password
 
