@@ -1,24 +1,37 @@
 <%= form_for Meal.new do |f| %>
-    <p>
-    "Name of the meal:"
-        <%= f.label :name  %>
+    
+    <% if false %>
+        btw these are comment tags
+        Nice form here. I am just adding some things for readability.
+        1. changing p to divs because for styling it will be easier for you. 
+        2. This is just a little easier to read.
+        <div>
+            <p>Name of the meal:</p>
+            <%= f.label :name  %> you can remove this line if you want to it doesn't really play any importance.
+            <%= f.text_field :name %>
+        </div>
+        3. Also if you look at the webpage form it looks nice and neat, which we all can agree is nice for the user.
+        4. removing the "" and adding a p tag. "" actually displays the quotes. Not that big of a deal just doing it because Im in here already.
+    <% end %>
+
+    <div>
+        <p>Name of the meal:</p>
         <%= f.text_field :name %>
-        </p>
-        <p>
-        "For 1 to 10 how healthy would you say your meal is:"
-        <%= f.label :nutrition_level  %>
-        <%= f.text_field :nutrition_level %>
-        </p>
-        <p>
-        "What diet type does the meal match:"
-        <%= f.label  :diet_type%>
-        <%= f.select :diet_type, options_for_select(['Omnivorous', 'Vegetarian', 'Vegan', 'Gluten Free', 'Keto', 'Paleo', 'Carnivorous'])%>
-        </p>
-        <p>
-        "What are the ingredients of the meal:"
-        <%= f.label :ingredients %>
+    </div>
+    <div>
+        <p>For 1 to 10 how healthy would you say your meal is:</p>
+         <%= f.text_field :nutrition_level %>
+    </div>
+    <div>
+        <p>What diet type does the meal match:</p>
+        <%= f.select :diet_type, options_for_select(['Omnivorous', 'Vegetarian', 'Vegan', 'Gluten Free', 'Keto', 'Paleo', 'Carnivorous']) %>
+    </div>
+    <div>
+        <p>What are the ingredients of the meal:</p>
         <%= f.text_field :ingredients %>
-        </p>
-        
+    </div><br>
+    
+    <div>
         <%= f.submit "Submit!" %>
-        <% end %>
+    </div>
+<% end %>

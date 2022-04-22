@@ -20,6 +20,9 @@ class UsersController < ApplicationController
     end
 
     def create
+      # You found a pro but you didn't do anything with it...
+      # I know what you're going for here but you did not relate a pro to a user.
+      # We will fix if you want.
        user_params[:pro] = Pro.find_by_id(params[:pro])
         @user = User.new(user_params)
      if @user.save!

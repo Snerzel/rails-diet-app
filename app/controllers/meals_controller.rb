@@ -2,6 +2,7 @@ class MealsController < ApplicationController
 
 
     def new
+      # we need to put some code here so that way our form remembers what user we are creating a meal for. You wrote some helper methods in application controller lets use those here and change our form in our views to reference an instance variable.
     end
 
     def index
