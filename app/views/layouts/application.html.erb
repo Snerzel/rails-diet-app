@@ -7,23 +7,31 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <% if false %>
+      <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <% end %>
   </head>
 
   <body>
-  
-    <% if session[:current_user_id] %>
-    <h4>
-     <%= "Hello #{current_user}!" %>
-    </h4>
-    <% end %>
     <%= yield %>
-    <div class="nav">
-    <% if logged_in? %>
-    <li><%= link_to "Profile", "/users/:id" %></li>
-      <a href="/logout">Logout</a>
-      
-      <% end %>
-      </div>
   </body>
+  <footer>
+    <% if false %>
+      Just some maintenance for this application html file.
+      1. you wanted the users name to print but had it before the yield tag. I assume it was because you wanted it in the header of the file. I moved it to the footer to do basically the same thing. We can move it anywhere we want but I will leave it here for now. I changed your code from two ifs statments to one if statement and including the current_user code in the (if logged_in?) helper. You can call the current_user tag anywhere. Including it here and just adding the .name to it gets the name of the user.
+      2. I moved your code into a footer tag. I think that is what you were going for but sometimes people are not familiar with some html tags. No big deal.
+    <% end %>
+
+    <div class="nav">
+      <% if logged_in? %>
+        <h4> <%= "Hello #{current_user.name}!" %> </h4>
+        <div>
+          <%= link_to "Profile", "/users/:id" %>
+        </div>
+        <div>
+          <a href="/logout">Logout</a>
+        <div>
+      <% end %>
+    </div>
+  </footer>
 </html>
