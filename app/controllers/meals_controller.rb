@@ -2,6 +2,8 @@ class MealsController < ApplicationController
 
 
     def new
+      @meal = Meal.new
+      
     end
 
     def index
@@ -9,15 +11,18 @@ class MealsController < ApplicationController
     end
 
     def show
-        @meal = Meal.find_by(params[:id])
+        @meal = Meal.find_by_id(params[:id])
     end
 
     def edit
-        # @meal = Meal.find(params[:id])
+      @meal = Meal.find_by_id(params[:id])
+        
     end
 
     def update
+      @meal = Meal.find_by_id(params[:id])
         if @meal.update(meal_params)
+          @meal.update(meal_params)
           redirect_to @meal
         else
           render 'edit'
@@ -30,11 +35,9 @@ class MealsController < ApplicationController
       end
 
     def create
-        @meal = Meal.new(meal_params)
-        @meal.user_id = session[:user_id]
-       # @meal.user.name = current_user.id
+        @meal = current_user.meals.build(meal_params)
         if @meal.save!
-            redirect_to meals_path(@meal)
+            redirect_to meal_path(@meal)
         else
             render :new
         end
@@ -42,6 +45,6 @@ class MealsController < ApplicationController
     private
     
       def meal_params
-        params.permit(:name, :nutrition_level, :diet_type, :ingredients)
+        params.require(:meal).permit(:name, :nutrition_level, :diet_type, :ingredients, :user)
       end
 end

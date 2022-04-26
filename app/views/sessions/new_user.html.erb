@@ -1,13 +1,13 @@
 <h1> User Login </h1>
 
-<%= form_for('/sessions') do |f| %>
+<%= form_with model: @user do |f| %>
     <p>
     <%= f.label :email %>
     <%= f.text_field :email %>
     </p>
     <p>
     <%= f.label :password %>
-    <%= f.password_field :password_digest %>
+    <%= f.password_field :password %>
     </p>
     <%= f.submit "Login!" %>
     <% end %>

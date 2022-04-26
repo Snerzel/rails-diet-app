@@ -28,8 +28,8 @@
 
 
     
-    <%= link_to "Edit #{@user.name}", '/users/:id/edit'%>
+    <%= link_to "Edit #{@user.name}", edit_user_path(@user) %>
     
 
     <%= link_to "See all meals", '/meals' %>
-    <%= link_to "Add a meal", '/add-new-meal' %>
+    <%= link_to "Add a meal", '/meals/new' %>

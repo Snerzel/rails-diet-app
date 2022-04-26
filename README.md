@@ -22,12 +22,12 @@ Users get notifide when a pro posts a note on their meal.
 Make everything prettier.
 
 Issues:
-1. Allergens have been removed and change to a stretch goal. Fixed
-2. Meals no longer show up on all-meals page. Only seed data shows. meals can be seen in inspect HTML as a link and meal show page only shows seed data. Was fixed but broke again.
-3. Logout and Profile buttons are visible when logged out.
-4. Profile button doesn't work. Other profile button never became visable but is in layout.
-5. Edit should only be visable for the owner of the show page. For meals the user who posted and all pros should see edit button.
-6. Edit button doesn't work.
+1.
+2..
+3.
+4. Link on meal show page takes user to there own show page not the user who submitted the meal.
+5. Edit should only be visable for the owner of the show page. For meals the user who posted.
+6. 
 7. Google login doesn't work
-8. Notes doesn't work.
-9. Logging in redirects to home instead of User/Pro's show page. Was fixed but broke.
+8. Notes doesn't work. May work now. But need to fix Pros first.
+9.

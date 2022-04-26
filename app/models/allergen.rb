@@ -1,5 +1,5 @@
 class Allergen < ApplicationRecord
-    belongs_to :meals
+    belongs_to :meal
 
 
 

@@ -28,6 +28,6 @@ class ProsController < ApplicationController
       private
     
       def pro_params
-        params.require(:pro).permit(:name, :email, :password_digest)
+        params.require(:pro).permit(:name, :email, :password)
       end
 end

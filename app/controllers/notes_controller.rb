@@ -2,6 +2,7 @@ class NotesController < ApplicationController
 
 
     def new
+        @note = Note.new
     end
 
     def index 
@@ -9,7 +10,7 @@ class NotesController < ApplicationController
     end
     
     def create
-        @note = note.new
+        @note = Note.new
         @note.note = params[:note]
         @note.save
     end

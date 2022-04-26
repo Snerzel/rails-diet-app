@@ -7,23 +7,22 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <% if false %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <% end %>
   </head>
 
   <body>
-  
-    <% if session[:current_user_id] %>
-    <h4>
-     <%= "Hello #{current_user}!" %>
-    </h4>
-    <% end %>
-    <%= yield %>
-    <div class="nav">
-    <% if logged_in? %>
-    <li><%= link_to "Profile", "/users/:id" %></li>
-      <a href="/logout">Logout</a>
-      
-      <% end %>
-      </div>
+      <%= yield %>
   </body>
+  <footer>
+  <div>
+    <% if logged_in? %>
+    <div>
+      <a href="/users/:id">Profile</a>
+      <a href="/logout">Logout</a>
+    </div>
+    <% end %>
+  </div>  
+  </footer>
 </html>

@@ -1,6 +1,6 @@
 <h1> Sign up as new pro! </h1>
 
-<%= form_for(@pro) do |f| %>
+<%= form_with model: @pro do |f| %>
     <p>
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -11,7 +11,7 @@
     </p>
     <p>
     <%= f.label :password %>
-    <%= f.password_field :password_digest %>
+    <%= f.password_field :password %>
     </p>
     <%= f.submit "Sign up!" %>
     <% end %>
