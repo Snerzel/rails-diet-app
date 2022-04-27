@@ -3,11 +3,11 @@
 <h3>It has <%= @meal.ingredients %> in it </h3>
 <h3>It is suitable for a <%= @meal.diet_type %> diet type</h3>
 
-<h4> This meal was submitted by <%= link_to "#{@meal.user.name}", user_path %></h4>
-
+<h4> This meal was submitted by <%= link_to "#{@meal.user.name}", user_path(@meal.user) %></h4>
+<% if owner?(@meal) %>
 <%= link_to "Edit #{@meal.name}", edit_meal_path(@meal) %>
 
-
+<% end %>
 
 <% Note.all.each do |n| %>
     <li><%= n.note %></li>

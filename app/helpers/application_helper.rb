@@ -6,6 +6,9 @@ module ApplicationHelper
 
     def current_user
         @user ||= User.find_by_id(session[:user_id]) if session[:user_id]
-        #@current_user ||= Pro.find_by_id(session[:pro_id])
     end
+
+    def owner?(object)
+        current_user == object.user 
+      end
 end

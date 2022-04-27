@@ -13,16 +13,26 @@ class ProsController < ApplicationController
         end
     end
 
-    
+    def pro_session
+        @pro = Pro.find_by(email: params[:email])
+
+        if @pro && @pro.authenticate(params[:password])
+            session[:pro_id] = @pro.id
+            redirect_to pro_path(@pro)
+        else
+            flash[:error] = "Incorrect credentials. Please try again."
+            redirect_to root_path
+         end         
+    end
 
     def show
-        redirect_if_not_logged_in
-        @pro = Pro.find_by_id(params[:id])
-        if !@pro
-            redirect_to '/'
+        # redirect_if_not_logged_in
+        # @pro = Pro.find_by_id(params[:id])
+        # if !@pro
+        #     redirect_to '/'
         
-        end
-
+        # end
+        current_pro
     end
     
       private

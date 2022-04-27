@@ -1,6 +1,6 @@
 <h1> Pro Login </h1>
 
-<%= form_for('/sessions') do |f| %>
+<%= form_with model: @pro do |f| %>
     <p>
     <%= f.label :email %>
     <%= f.text_field :email %>

@@ -13,5 +13,6 @@ class NotesController < ApplicationController
         @note = Note.new
         @note.note = params[:note]
         @note.save
+        redirect_to meal_path(@meal)
     end
 end

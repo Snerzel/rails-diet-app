@@ -3,22 +3,21 @@
     "Name of the meal:"
         <%= f.label :name  %>
         <%= f.text_field :name %>
-        </p>
-        <p>
-        "For 1 to 10 how healthy would you say your meal is:"
-        <%= f.label :nutrition_level  %>
-        <%= f.text_field :nutrition_level %>
-        </p>
-        <p>
-        "What diet type does the meal match:"
-        <%= f.label  :diet_type%>
-        <%= f.select :diet_type, options_for_select(['Omnivorous', 'Vegetarian', 'Vegan', 'Gluten Free', 'Keto', 'Paleo', 'Carnivorous'])%>
-        </p>
-        <p>
-        "What are the ingredients of the meal:"
-        <%= f.label :ingredients %>
+    </div>
+    <div>
+        <p>For 1 to 10 how healthy would you say your meal is:</p>
+         <%= f.text_field :nutrition_level %>
+    </div>
+    <div>
+        <p>What diet type does the meal match:</p>
+        <%= f.select :diet_type, options_for_select(['Omnivorous', 'Vegetarian', 'Vegan', 'Gluten Free', 'Keto', 'Paleo', 'Carnivorous']) %>
+    </div>
+    <div>
+        <p>What are the ingredients of the meal:</p>
         <%= f.text_field :ingredients %>
-        </p>
-        
+    </div><br>
+    
+    <div>
         <%= f.submit "Submit!" %>
-        <% end %>
+    </div>
+<% end %>

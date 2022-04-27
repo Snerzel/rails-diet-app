@@ -23,11 +23,11 @@ Make everything prettier.
 
 Issues:
 1.
-2..
-3.
+2. can;t push to github.
+3. Pro sign up not showing up
 4. Link on meal show page takes user to there own show page not the user who submitted the meal.
 5. Edit should only be visable for the owner of the show page. For meals the user who posted.
-6. 
+6. Doesn't show pro the user's show page.
 7. Google login doesn't work
 8. Notes doesn't work. May work now. But need to fix Pros first.
 9.

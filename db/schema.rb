@@ -12,12 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2022_03_28_225209) do
 
-  create_table "allergen", force: :cascade do |t|
+  create_table "allergens", force: :cascade do |t|
     t.string "ingredients"
     t.integer "meal_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["meal_id"], name: "index_allergen_on_meal_id"
+    t.index ["meal_id"], name: "index_allergens_on_meal_id"
   end
 
   create_table "meals", force: :cascade do |t|
@@ -34,8 +34,10 @@ ActiveRecord::Schema.define(version: 2022_03_28_225209) do
   create_table "notes", force: :cascade do |t|
     t.string "note"
     t.integer "pro_id"
+    t.integer "meal_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["meal_id"], name: "index_notes_on_meal_id"
     t.index ["pro_id"], name: "index_notes_on_pro_id"
   end
 
@@ -63,8 +65,9 @@ ActiveRecord::Schema.define(version: 2022_03_28_225209) do
     t.index ["pro_id"], name: "index_users_on_pro_id"
   end
 
-  add_foreign_key "allergen", "meals"
+  add_foreign_key "allergens", "meals"
   add_foreign_key "meals", "users"
+  add_foreign_key "notes", "meals"
   add_foreign_key "notes", "pros"
   add_foreign_key "users", "pros"
 end
