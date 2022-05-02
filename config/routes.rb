@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'application#home'
   
   get '/user-login', to: 'sessions#new_user'
-  post '/user-login', to: 'sessions#create'
+  post '/user-login', to: 'users#user_session'
  # post '/sessions', to: 'sessions#create'
   get '/user-signup', to: 'users#new'
   post '/user-signup', to: 'users#create'
@@ -22,7 +22,8 @@ Rails.application.routes.draw do
   # post '/meals/:id/edit', to: 'meals#update'
   # patch 'meals/:id', to: 'meals#update'
 
-  get '/logout', to: 'sessions#destroy'
+  get '/logout_user', to: 'sessions#destroy_user'
+  get '/logout_pro', to: 'sessions#destroy_pro'
 
 
   get '/auth/google/callback', to: 'sessions#create'

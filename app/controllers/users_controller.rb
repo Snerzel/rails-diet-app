@@ -34,6 +34,19 @@ class UsersController < ApplicationController
         end
     end
 
+    def user_session
+      @user = User.find_by(email: params[:email])
+     
+      if @user && @user.authenticate(params[:password])
+        session[:user_id] = @user.id
+        
+        redirect_to user_path(@user)
+      else
+        flash[:error] = "Incorrect credentials. Please try again."
+        redirect_to root_path
+      end
+    end
+
     def show
         #redirect_if_not_logged_in
       #   @user = User.find_by_id(session[:user_id])
@@ -42,6 +55,7 @@ class UsersController < ApplicationController
       #  else 
       #   redirect_to '/'
       #  end
+      @user = User.find(params[:id])
       current_user
     end
     

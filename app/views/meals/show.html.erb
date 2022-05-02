@@ -14,12 +14,12 @@
 <% end %>
 
 
-<%= form_for('/notes') do |f| %>
+    <%= form_for :note do |f| %>
 
-<div>
-<%= f.label :note %>
-<%= f.text_field :note %>
-</div>
+    <div>
+        <%= f.label :note %>
+        <%= f.text_field :note %>
+    </div>
 
-<%= f.submit "Post note" %>
-<% end %>
+    <%= f.submit "Post note" %>
+    <% end %>

@@ -9,10 +9,22 @@ class NotesController < ApplicationController
         @notes = Note.all
     end
     
-    def create
-        @note = Note.new
-        @note.note = params[:note]
-        @note.save
-        redirect_to meal_path(@meal)
+    def show
+        @meal = Meal.find_by_id(params[:id])
     end
+    
+    def create
+        @note = current_pro.notes.build(note_params)
+        if @note.save!
+            redirect_to meal_path(@meal)
+            else
+                render :new
+        end
+    end
+
+    private
+    
+      def note_params
+        params.require(:note).permit(:note, :meal, :pro)
+      end
 end
