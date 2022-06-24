@@ -28,8 +28,9 @@
 
 
     
-    <%= link_to "Edit #{@user.name}", edit_user_path(@user) if @user == current_user %>
+    <%= link_to "Edit #{@user.name}", edit_user_path(@user) %>
     
 
     <%= link_to "See all meals", '/meals' %>
     <%= link_to "Add a meal", '/meals/new' %>
+    

@@ -16,6 +16,9 @@ class MealsController < ApplicationController
 
     def edit
       @meal = Meal.find_by_id(params[:id])
+      if current_user.id != @meal.user_id
+        redirect_to current_user
+      end
         
     end
 

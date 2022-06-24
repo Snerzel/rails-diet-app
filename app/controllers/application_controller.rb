@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     end
   
     def current_user
-      @user ||= User.find_by_id(session[:user_id]) if session[:user_id]
+      @current_user ||= User.find_by_id(session[:user_id]) if session[:user_id]
       #@current_user ||= Pro.find_by_id(session[:pro_id])
     end
 
@@ -27,6 +27,10 @@ class ApplicationController < ActionController::Base
 
     def is_user?
       logged_in? == session[:user_id]
+    end
+
+    def owner?(object)
+      current_user == object.user 
     end
 
     # def redirect_if_not_logged_in

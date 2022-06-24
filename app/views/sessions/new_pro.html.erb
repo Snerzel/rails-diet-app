@@ -1,5 +1,7 @@
 <h1> Pro Login </h1>
 
+<p><%= flash[:error] %></p>
+
 <%= form_with model: @pro do |f| %>
     <p>
     <%= f.label :email %>

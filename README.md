@@ -21,8 +21,4 @@ Users and pros can see list of just new meals
 Users get notifide when a pro posts a note on their meal.
 Make everything prettier.
 
-Issues:
-1. Fix edit being visable for non owners.
-2. Logout/Profile buttons change from pro to user and don't go away when logged out.
-3. user can't nav back to Profile using the button.
-4. Google login redirects to home without opening google GUI or starting a session.
+

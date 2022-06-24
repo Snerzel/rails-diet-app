@@ -18,18 +18,18 @@
   <footer>
   <div>
     <% if logged_in? %>
-      <% if !is_pro? %>
-        <div>
-          <a href="/users/:id">Profile</a>
-          <a href="/logout_user">Logout</a>
-        </div>
-      <% else  %>
-        <div>
-          <a href="/pros/:id">Profile</a>
-          <a href="/logout_pro">Logout</a>
-        </div>
-      <% end %>
+      <% if current_user %>
+      <div>
+        <a href="/users/<%= current_user.id %>">Profile</a>
+        <a href="/logout_user">Logout</a>
+      </div>
+    <% else  %>
+      <div>
+        <a href="/pros/<%= current_pro.id %>">Profile</a>
+        <a href="/logout_pro">Logout</a>
+      </div>
     <% end %>
+  <% end %>
   </div>  
   </footer>
 </html>

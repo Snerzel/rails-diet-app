@@ -1,5 +1,7 @@
 <h1> Sign up as new user! </h1>
 
+<%= render partial: 'layouts/errors', locals: {object: @user}  %>
+
 <%= render 'form' %>
 
 <%= Time.now %>

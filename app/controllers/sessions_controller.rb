@@ -9,16 +9,20 @@ class SessionsController < ApplicationController
     
 
     def create
-     
-        if params[:provider] == 'google_oauth2'
+      
+      
+        # if params[:provider] == 'google_oauth2'
+            
             @user = User.create_by_google_omniauth(auth)
+            
             session[:user_id] = @user.id
             redirect_to user_path(@user)
       
-        else
-            flash[:error] = "Incorrect credentials. Please try again."
-            redirect_to root_path
-          end
+        # else
+        #     flash[:error] = "Incorrect credentials. Please try again."
+            
+        #     redirect_to root_path
+        #   end
     end
 
     def omniauth

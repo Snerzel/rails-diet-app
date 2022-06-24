@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   get '/logout_pro', to: 'sessions#destroy_pro'
 
 
-  get '/auth/google/callback', to: 'sessions#create'
+  get '/auth/google_oauth2/callback', to: 'sessions#create'
 
  resources :notes, only: [:index, :show, :new, :create, :edit, :update]
  resources :users, only: [:index, :show, :new, :create, :edit, :update]
