@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     belongs_to :pro, optional: true
-    has_many :meals
+    has_many :meals, -> {order(time_submitted: :desc)}
     has_many :notes, through: :meals
     
     

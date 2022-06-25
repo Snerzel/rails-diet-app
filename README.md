@@ -14,6 +14,7 @@ Both the user and pro can edit meals if some of the information is wrong.
 
 
 Stretch goals:
+Only shows relevant notes for that meal.
 Ability to search meals.
 Users can add things they are allergic to.
 Only be shown meals that are appropriate for the user's diet.

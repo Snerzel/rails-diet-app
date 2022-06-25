@@ -16,7 +16,7 @@ class NotesController < ApplicationController
     def create
         @note = current_pro.notes.build(note_params)
         if @note.save!
-            redirect_to meal_path(@meal)
+            redirect_to meal_path
             else
                 render :new
         end
