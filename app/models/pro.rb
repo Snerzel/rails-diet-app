@@ -9,5 +9,8 @@ class Pro < ApplicationRecord
     validates :name, uniqueness: true,  presence: true
     validates :email, uniqueness: true, presence: true
 
-    
+    def self.alpha
+        order(:name)
+      end
+
 end

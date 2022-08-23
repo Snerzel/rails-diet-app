@@ -3,6 +3,10 @@ class ProsController < ApplicationController
         @pro = Pro.new
     end
 
+    def index
+        @pros = Pro.all.order('title ASC')
+    end
+
     def create
         @pro = Pro.new(pro_params)
      if @pro.save

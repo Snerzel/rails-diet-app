@@ -16,7 +16,12 @@
         <p>What are the ingredients of the meal:</p>
         <%= f.text_field :ingredients %>
     </div><br>
-    
+    <div>
+        <p>The category of this meal is:</p>
+        
+        
+        <%= f.collection_select :category_id, Category.all, :id, :name    %>
+    </div>
     <div>
         <%= f.submit "Submit!" %>
     </div>

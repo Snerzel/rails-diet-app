@@ -14,6 +14,7 @@ class NotesController < ApplicationController
     end
     
     def create
+        
         @note = current_pro.notes.build(note_params)
         if @note.save!
             redirect_to meal_path
@@ -25,6 +26,6 @@ class NotesController < ApplicationController
     private
     
       def note_params
-        params.require(:note).permit(:note, :meal, :pro)
+        params.require(:note).permit(:note, :meal_id, :pro)
       end
 end

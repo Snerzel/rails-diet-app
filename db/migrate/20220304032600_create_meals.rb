@@ -6,6 +6,7 @@ class CreateMeals < ActiveRecord::Migration[6.1]
       t.string :diet_type
       t.string :ingredients
       t.belongs_to :user, foreign_key: true
+      t.belongs_to :category, foreign_key: true
       t.timestamps
     end
   end

@@ -25,9 +25,16 @@ Rails.application.routes.draw do
   get '/logout_user', to: 'sessions#destroy_user'
   get '/logout_pro', to: 'sessions#destroy_pro'
 
+  get '/all_pros', to: 'pros#index'
 
   get '/auth/google_oauth2/callback', to: 'sessions#create'
 
+  get '/new_category', to: 'categories#new'
+  #post '/new_category', to: 'categories#create'
+  get '/categories', to: 'categories#show'
+  post '/categories', to: 'categories#create'
+  
+  resources :categories, only: [:show, :new]
  resources :notes, only: [:index, :show, :new, :create, :edit, :update]
  resources :users, only: [:index, :show, :new, :create, :edit, :update]
  resources :pros, only: [:show]
